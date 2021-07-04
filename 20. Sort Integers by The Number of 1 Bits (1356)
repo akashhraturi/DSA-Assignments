@@ -1,0 +1,27 @@
+class Solution {
+public:
+    static bool fun(int a, int b) {
+        int c=0, d=0, x=a, y=b;
+        while(a != 0) {
+            a=a & (a-1);
+            c++;
+        }
+        while(b != 0) {
+            b=b & (b-1);
+            d++;
+        }
+        if(c>d) {
+            return false;
+        }
+        if(d==c) {
+            if(x>y)
+                return false;
+        }
+        return true;
+    }
+    
+    vector<int> sortByBits(vector<int>& arr) {
+        sort(arr.begin(), arr.end(), fun);
+        return arr;
+    }
+};
