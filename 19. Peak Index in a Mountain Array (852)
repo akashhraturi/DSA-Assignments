@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int peakIndexInMountainArray(vector<int>& arr) {
+        int peak=0;
+        int max=0;
+        int i=0;
+        
+//         for(auto i : arr) {
+//             if(arr[i]>max) {
+//                 max = arr[i];
+//                 peak=i;
+//             }
+//         }
+        
+        for(i=0; i<arr.size(); i++) {
+            if(arr[i] > max) {
+                max=arr[i];
+                peak=i;
+            }
+        }
+        return peak;
+    }
+};
