@@ -1,0 +1,33 @@
+class Solution {
+public:
+    string reformatDate(string date) {
+        unordered_map<string, string> months;
+        months["Jan"] = "01";
+        months["Feb"] = "02";
+        months["Mar"] = "03";
+        months["Apr"] = "04";
+        months["May"] = "05";
+        months["Jun"] = "06";
+        months["Jul"] = "07";
+        months["Aug"] = "08";
+        months["Sep"] = "09";
+        months["Oct"] = "10";
+        months["Nov"] = "11";
+        months["Dec"] = "12";
+        
+        string ans;
+        string mon;
+        
+        int n = date.size();
+        
+        if(n == 13) {
+            mon = date.substr(5,3);
+            ans = date.substr(9,4) + '-' + months[mon] + '-' + date.substr(0,2);
+        } else {
+            mon = date.substr(4,3);
+            ans = date.substr(8,4) + '-' + months[mon] + "-0" + date.substr(0,1);
+        }
+            
+        return ans;
+    }
+};
