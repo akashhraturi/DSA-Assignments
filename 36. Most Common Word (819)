@@ -1,0 +1,25 @@
+class Solution {
+public:
+    string mostCommonWord(string paragraph, vector<string>& banned) {
+        for(auto &i : paragraph)
+            i = isalpha(i) ? tolower(i) : ' ';
+        
+        unordered_map<string, int> freq;
+        unordered_set<string> ss(banned.begin(), banned.end());
+        
+        int count=0;
+        string ans, word;
+        istringstream iss(paragraph);
+        
+        while(iss >> word) {
+            if(ss.find(word) == ss.end()) {
+                ++freq[word];
+                if(count < freq[word]) {
+                    ans = word;
+                    count = freq[word];
+                }
+            }
+        }
+        return ans;
+    }
+};
