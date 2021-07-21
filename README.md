@@ -10,3 +10,5 @@
 ### Refer main.tf for further detailed information
 
 ### Also, variable.tf lists down the variables.
+
+Markup : - Bullet list
